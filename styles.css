@@ -2,47 +2,54 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f0f0f0;
+    background-color: #333; /* Dark grey background */
+    color: #fff; /* Light font for better contrast on dark background */
 }
 
-h1 {
+.title-container {
     text-align: center;
-    position: relative;
-    font-size: 24px;
+    padding: 20px;
+    background-color: #f0f0f0; /* Light background for the title */
+    color: black; /* Black font color for the title */
 }
 
-h1:after {
+.title-container h1 {
+    margin: 0 auto;
+    display: inline-block;
+    position: relative;
+}
+
+.title-container:after {
     content: '';
     display: block;
+    margin-top: 10px;
     height: 2px;
-    background-color: black;
-    position: absolute;
-    width: 80%;
-    left: 10%; /* centers the line */
-    bottom: -10px;
+    background-color: black; /* Line color */
+    width: 100%; /* Full width line */
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
 }
 
 form {
     background: white;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 label {
     display: block;
-    margin-bottom: 10px;
+    margin: 10px 0 5px;
 }
 
 input[type="text"] {
     width: 100%;
-    padding: 8px;
-    margin: 10px 0;
-    box-sizing: border-box;
+    padding: 10px;
+    margin-bottom: 20px;
     border-radius: 4px;
     border: 1px solid #ccc;
 }
@@ -51,13 +58,13 @@ button {
     background-color: #007bff;
     color: white;
     border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 4px;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 5px;
     cursor: pointer;
     display: block;
-    margin: 20px auto 0;
-    transition: background-color 0.2s;
+    width: 100%; /* Makes the button bigger and easier to click */
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
@@ -69,4 +76,5 @@ button:hover {
     font-size: 20px;
     font-weight: bold;
     text-align: center;
+    color: #fff; /* Ensure result text is visible on dark background */
 }
