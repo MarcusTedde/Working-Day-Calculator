@@ -77,7 +77,7 @@ button:hover {
     font-size: 1.2rem; /* Fixed size but could also use vw */
     font-weight: bold;
     text-align: center;
-    color: #fff;
+    color: #767975;
 }
 
 @media (max-width: 600px) {
