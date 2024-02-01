@@ -5,66 +5,67 @@ body {
     background-color: #333; /* Dark grey background */
     color: #fff; /* Light font for better contrast on dark background */
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .title-container {
     text-align: center;
-    width: 90%;
-    max-width: 600px; /* Ensures the title container doesn't get too wide */
+    padding: 2vw;
+    margin-bottom: 2vh; /* Adds some space between the title and the form, relative to viewport */
 }
 
 .form-container {
-    width: 90%; /* Makes the form responsive */
-    max-width: 600px; /* Ensures the form doesn't get too wide */
-    margin-top: 20px;
+    width: 80vw; /* Adjusts width relative to the viewport width */
+    max-width: 500px; /* Ensures the form doesn't get too wide on larger screens */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
 }
 
 form {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-    color: black; /* For form text */
+    padding: 4vw; /* Padding scales with the viewport width */
+    display: flex;
+    flex-direction: column;
 }
 
-.input-container,
-.button-container {
-    margin-bottom: 20px;
+.input-container {
+    margin-bottom: 2vh;
 }
 
 label {
     color: black;
     display: block;
-    margin: 10px 0 5px;
+    margin-bottom: 1vh;
 }
 
+input[type="date"],
 input[type="text"] {
-    width: 100%; /* Ensures input fields take the full width of the form */
-    padding: 10px;
-    border-radius: 4px;
+    padding: 1.5vw; /* Makes padding responsive */
+    margin-bottom: 2vh;
     border: 1px solid #ccc;
-    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+    border-radius: 4px;
+    width: calc(100% - 3vw); /* Adjusts width to ensure it accounts for padding */
 }
 
 .button-container {
     text-align: center;
+    margin-top: 2vh;
 }
 
 button {
     background-color: #007bff;
     color: white;
     border: none;
-    padding: 15px 30px;
-    font-size: 18px;
-    border-radius: 5px;
+    padding: 1.5vw 3vw; /* Responsive padding */
+    font-size: 1.2rem; /* Remains consistent but could also use vw for scalability */
+    border-radius: 4px;
     cursor: pointer;
-    width: 60%; /* Adjust the button width */
+    width: 60%; /* Adjust based on preference */
     transition: background-color 0.3s ease;
-    display: inline-block; /* Centers the button */
 }
 
 button:hover {
@@ -72,25 +73,23 @@ button:hover {
 }
 
 #result {
-    margin-top: 20px;
-    font-size: 20px;
+    margin-top: 2vh;
+    font-size: 1.2rem; /* Fixed size but could also use vw */
     font-weight: bold;
     text-align: center;
-    color: #fff; /* Ensure result text is visible on dark background */
+    color: #fff;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .button-container button {
-        width: 80%; /* Makes the button wider on smaller screens */
+@media (max-width: 600px) {
+    .form-container, .title-container {
+        width: 95vw; /* More width on smaller screens */
     }
-}
 
-@media (max-width: 480px) {
+    button {
+        width: 80%; /* Larger button on smaller screens */
+    }
+
     form {
-        padding: 15px; /* Reduces padding on very small screens */
-    }
-    .button-container button {
-        width: 100%; /* Full width button for very small screens */
+        padding: 5vw; /* Slightly more padding on smaller screens */
     }
 }
