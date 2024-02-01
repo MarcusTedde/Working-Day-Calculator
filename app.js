@@ -1,12 +1,22 @@
 document.getElementById('dateForm').addEventListener('submit', function(e) {
     e.preventDefault();
 
-    const startDate = document.getElementById('startDate').value;
-    const endDate = document.getElementById('endDate').value;
+    // Retrieve date in YYYY-MM-DD format
+    let startDate = document.getElementById('startDate').value;
+    let endDate = document.getElementById('endDate').value;
+
+    // Convert to DD/MM/YYYY for processing
+    startDate = convertDateToUKFormat(startDate);
+    endDate = convertDateToUKFormat(endDate);
 
     const result = calculateWorkingDays(startDate, endDate);
     document.getElementById('result').innerText = `There are ${result} working days between ${startDate} and ${endDate}.`;
 });
+
+function convertDateToUKFormat(isoDate) {
+    const parts = isoDate.split('-');
+    return `${parts[2]}/${parts[1]}/${parts[0]}`; // Convert to DD/MM/YYYY format
+}
 
 function parseDate(input) {
     const parts = input.match(/(\d+)/g);
