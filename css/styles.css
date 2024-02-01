@@ -37,6 +37,7 @@ form {
 }
 
 label {
+    color: black;
     display: block;
     margin: 10px 0 5px;
 }
