@@ -13,21 +13,6 @@ body {
     color: black; /* Black font color for the title */
 }
 
-.title-container h1 {
-    margin: 0 auto;
-    display: inline-block;
-    position: relative;
-}
-
-.title-container:after {
-    content: '';
-    display: block;
-    margin-top: 10px;
-    height: 2px;
-    background-color: black; /* Line color */
-    width: 100%; /* Full width line */
-}
-
 .form-container {
     display: flex;
     justify-content: center;
@@ -41,6 +26,11 @@ form {
     box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
+.input-container,
+.button-container {
+    margin-bottom: 20px;
+}
+
 label {
     display: block;
     margin: 10px 0 5px;
@@ -49,9 +39,12 @@ label {
 input[type="text"] {
     width: 100%;
     padding: 10px;
-    margin-bottom: 20px;
     border-radius: 4px;
     border: 1px solid #ccc;
+}
+
+.button-container {
+    text-align: center;
 }
 
 button {
@@ -62,8 +55,8 @@ button {
     font-size: 18px;
     border-radius: 5px;
     cursor: pointer;
-    display: block;
-    width: 100%; /* Makes the button bigger and easier to click */
+    display: inline-block; /* Center the button in the container */
+    width: 50%; /* Make the button wide */
     transition: background-color 0.3s ease;
 }
 
