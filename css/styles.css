@@ -4,19 +4,23 @@ body {
     padding: 0;
     background-color: #333; /* Dark grey background */
     color: #fff; /* Light font for better contrast on dark background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
 }
 
 .title-container {
     text-align: center;
-    padding: 20px;
-    background-color: #f0f0f0; /* Light background for the title */
-    color: black; /* Black font color for the title */
+    width: 90%;
+    max-width: 600px; /* Ensures the title container doesn't get too wide */
 }
 
 .form-container {
-    display: flex;
-    justify-content: center;
-    padding: 20px;
+    width: 90%; /* Makes the form responsive */
+    max-width: 600px; /* Ensures the form doesn't get too wide */
+    margin-top: 20px;
 }
 
 form {
@@ -24,6 +28,7 @@ form {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    color: black; /* For form text */
 }
 
 .input-container,
@@ -37,10 +42,11 @@ label {
 }
 
 input[type="text"] {
-    width: 100%;
+    width: 100%; /* Ensures input fields take the full width of the form */
     padding: 10px;
     border-radius: 4px;
     border: 1px solid #ccc;
+    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
 }
 
 .button-container {
@@ -55,9 +61,9 @@ button {
     font-size: 18px;
     border-radius: 5px;
     cursor: pointer;
-    display: inline-block; /* Center the button in the container */
-    width: 50%; /* Make the button wide */
+    width: 60%; /* Adjust the button width */
     transition: background-color 0.3s ease;
+    display: inline-block; /* Centers the button */
 }
 
 button:hover {
@@ -70,4 +76,20 @@ button:hover {
     font-weight: bold;
     text-align: center;
     color: #fff; /* Ensure result text is visible on dark background */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .button-container button {
+        width: 80%; /* Makes the button wider on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    form {
+        padding: 15px; /* Reduces padding on very small screens */
+    }
+    .button-container button {
+        width: 100%; /* Full width button for very small screens */
+    }
 }
